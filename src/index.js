@@ -1,9 +1,12 @@
 import dotenv from 'dotenv';
 dotenv.config();
+import cors from 'cors';
 import { app } from './constants.js';
 import connectDB from './db/index.js';
 import { Filter } from './controllers/filters.controllers.js';
 import { BarChart, CountryMap, LineChart, PieChart, ScatterChart, Table } from './controllers/charts.controllers.js';
+
+app.use(cors())
 
 // Routes
 app.get('/', (req, res) => {
